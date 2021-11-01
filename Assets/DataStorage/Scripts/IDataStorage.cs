@@ -1,4 +1,4 @@
-namespace DS.Core
+namespace NineGames.Storage
 {
     public interface IDataStorage
     {

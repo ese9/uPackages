@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace DS.Core
+namespace NineGames.Storage
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class PatchDataContainer : DataContainerBase

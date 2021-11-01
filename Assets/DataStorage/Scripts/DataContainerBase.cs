@@ -1,6 +1,6 @@
 using Newtonsoft.Json.Serialization;
 
-namespace DS.Core
+namespace NineGames.Storage
 {
     public abstract class DataContainerBase
     {

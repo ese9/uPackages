@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DS.Core
+namespace NineGames.Storage
 {
     public static class DataPatchLocator
     {

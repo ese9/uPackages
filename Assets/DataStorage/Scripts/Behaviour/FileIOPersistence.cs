@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace DS.Core
+namespace NineGames.Storage
 {
     public class FileIOPersistence : IDataPersistence
     {

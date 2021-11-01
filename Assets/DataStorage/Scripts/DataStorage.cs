@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace DS.Core
+namespace NineGames.Storage
 {
     public class DataStorage : IDataStorage
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DS.Core
+namespace NineGames.Storage
 {
     public abstract class DataPatch : ScriptableObject
     {

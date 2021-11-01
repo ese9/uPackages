@@ -1,0 +1,9 @@
+{
+  "name": "com.ese9.addresable-extensions",
+  "displayName" : "Addressable Extensions",
+  "version": "1.0.0",
+  "dependencies": {
+    "com.unity.addressables": "1.18.19"
+  },
+  "author": "ese9"
+}

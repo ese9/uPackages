@@ -5,7 +5,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace DS.Core
+namespace NineGames.Storage
 {
     public class DataConfig : ScriptableObject
     {

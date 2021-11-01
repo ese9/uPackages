@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace DS.Core
+namespace NineGames.Storage
 {
     public class PlayerPrefsPersistence : IDataPersistence
     {
         private const string SaveablePrefsKey = "saveable_key";
-        
+
         public bool ContainerExists(string key) => PlayerPrefs.HasKey(key);
 
         public PlayerPrefsPersistence() => TryAddSaveableKey();
@@ -42,8 +42,8 @@ namespace DS.Core
         {
             ClearContainers();
             TryAddSaveableKey();
-            
-            foreach (var container in containers) 
+
+            foreach (var container in containers)
                 CreateContainer(container.Key, container.Value);
         }
 
