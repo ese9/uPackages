@@ -1,10 +1,10 @@
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IdleCivilization.Client.SaveLoadSystem
+namespace DS.Core
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class PatchSaveData : SaveableBase
+    public class PatchDataContainer : DataContainerBase
     {
         public const string PatchVersion = "patch-version";
         

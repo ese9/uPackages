@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace IdleCivilization.Client.SaveLoadSystem
+namespace DS.Core
 {
     public abstract class DataPatch : ScriptableObject
     {

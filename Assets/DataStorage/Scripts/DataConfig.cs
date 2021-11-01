@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Newtonsoft.Json;
 using UnityEngine;
 
-namespace IdleCivilization.Client.SaveLoadSystem
+namespace DS.Core
 {
     public class DataConfig : ScriptableObject
     {
@@ -18,6 +19,13 @@ namespace IdleCivilization.Client.SaveLoadSystem
         [SerializeField, HideInInspector] private int major;
         [SerializeField, HideInInspector] private int minor;
         [SerializeField] private List<DataPatch> patches = new List<DataPatch>();
+        
+        public static readonly JsonSerializerSettings SerializerSettings = new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.Auto,
+            NullValueHandling = NullValueHandling.Ignore,
+            ObjectCreationHandling = ObjectCreationHandling.Replace
+        };
 
         public DataVersion Version => new DataVersion(major, minor);
         public IReadOnlyCollection<DataPatch> Patches => patches;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IdleCivilization.Client.SaveLoadSystem
+namespace DS.Core
 {
     public static class DataPatchLocator
     {

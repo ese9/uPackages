@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace IdleCivilization.Client.SaveLoadSystem
+namespace DS.Core
 {
-    public interface IDataPersistenceBehaviour
+    public interface IDataPersistence
     {
         bool ContainerExists(string key);
         

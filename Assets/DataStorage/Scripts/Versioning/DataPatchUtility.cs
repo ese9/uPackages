@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace IdleCivilization.Client.SaveLoadSystem
+namespace DS.Core
 {
     public static class DataPatchUtility
     {
-        private static readonly PatchSaveData PatchInfo = new PatchSaveData();
-        private static string PatchInfoKey => PatchSaveData.PatchVersion;
+        private static readonly PatchDataContainer PatchInfo = new PatchDataContainer();
+        private static string PatchInfoKey => PatchDataContainer.PatchVersion;
 
         public static void Log(string message) => UnityEngine.Debug.Log($"<b>[PATCH] {message}</b>");
 
@@ -36,7 +36,7 @@ namespace IdleCivilization.Client.SaveLoadSystem
             if (shouldUpdatePatchVersion)
             {
                 UpdatePatchVersion(containers, dataVersion);
-                patchedJson = JsonConvert.SerializeObject(containers, DataContainer.SerializerSettings);
+                patchedJson = JsonConvert.SerializeObject(containers, DataConfig.SerializerSettings);
             }
 
             return true;
@@ -47,7 +47,7 @@ namespace IdleCivilization.Client.SaveLoadSystem
             TryPatchData(json, dataVersion, out patchedJson);
             var containers = JsonConvert.DeserializeObject<Dictionary<string, string>>(patchedJson);
             UpdatePatchVersion(containers, dataVersion);
-            patchedJson = JsonConvert.SerializeObject(containers, DataContainer.SerializerSettings);
+            patchedJson = JsonConvert.SerializeObject(containers, DataConfig.SerializerSettings);
         }
 
         private static void UpdatePatchVersion(IDictionary<string, string> containers, DataVersion version)
@@ -63,7 +63,8 @@ namespace IdleCivilization.Client.SaveLoadSystem
             if (!containers.TryGetValue(PatchInfoKey, out _))
             {
                 PatchInfo.SetDataVersion(DataVersion.MinValue);
-                containers.Add(PatchInfoKey, PatchInfo.SerializeData());
+                var patchContainerJson = JsonConvert.SerializeObject(PatchInfo, Formatting.Indented, DataConfig.SerializerSettings);
+                containers.Add(PatchInfoKey, patchContainerJson);
                 return DataVersion.MinValue;
             }
 

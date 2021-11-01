@@ -2,7 +2,7 @@ using System;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace IdleCivilization.Client.SaveLoadSystem
+namespace DS.Core
 {
     [Serializable]
     public readonly struct DataVersion : IComparable<DataVersion>, IEquatable<DataVersion>, ISerializable

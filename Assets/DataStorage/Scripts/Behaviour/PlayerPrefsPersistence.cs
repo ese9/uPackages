@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace IdleCivilization.Client.SaveLoadSystem
+namespace DS.Core
 {
-    public class DataPersistencePrefsBehaviour : IDataPersistenceBehaviour
+    public class PlayerPrefsPersistence : IDataPersistence
     {
         private const string SaveablePrefsKey = "saveable_key";
-
-        public static readonly DataPersistencePrefsBehaviour Default = new DataPersistencePrefsBehaviour();
-
+        
         public bool ContainerExists(string key) => PlayerPrefs.HasKey(key);
 
-        public DataPersistencePrefsBehaviour() => TryAddSaveableKey();
+        public PlayerPrefsPersistence() => TryAddSaveableKey();
 
         public void CreateContainer(string key, string text)
         {
